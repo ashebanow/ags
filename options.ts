@@ -650,12 +650,12 @@ const options = mkOptions(OPTIONS, {
                 logout: opt("pkill Hyprland"),
                 shutdown: opt("shutdown now"),
                 avatar: {
-                    image: opt("assets/AndyEyeball.png"),
+                    image: opt("$HOME/.config/ags/assets/AndyEyeball.png"),
                     name: opt<"system" | string>("system"),
                 },
             },
             stats: {
-                enable_gpu: opt(false),
+                enable_gpu: opt(true),
             },
             shortcuts: {
                 left: {
