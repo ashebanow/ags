@@ -650,7 +650,7 @@ const options = mkOptions(OPTIONS, {
                 logout: opt("pkill Hyprland"),
                 shutdown: opt("shutdown now"),
                 avatar: {
-                    image: opt("/home/jaskir/Pictures/Icons/900-900-max_catppuccin-mocha_hald8_GaussianRBF_lum1_shape96_near16.png"),
+                    image: opt("assets/AndyEyeball.png"),
                     name: opt<"system" | string>("system"),
                 },
             },
@@ -661,18 +661,18 @@ const options = mkOptions(OPTIONS, {
                 left: {
                     shortcut1: {
                         icon: opt("󰇩"),
-                        tooltip: opt("Microsoft Edge"),
-                        command: opt("microsoft-edge-stable")
+                        tooltip: opt("Firefox"),
+                        command: opt("firefox")
                     },
                     shortcut2: {
-                        icon: opt(""),
-                        tooltip: opt("Spotify"),
-                        command: opt("spotify-launcher")
+                        icon: opt("󰎆"),
+                        tooltip: opt("YouTube Music"),
+                        command: opt("youtube-music")
                     },
                     shortcut3: {
-                        icon: opt(""),
-                        tooltip: opt("Discord"),
-                        command: opt("discord")
+                        icon: opt("󰌾"),
+                        tooltip: opt("1Password"),
+                        command: opt("1password")
                     },
                     shortcut4: {
                         icon: opt(""),
@@ -696,42 +696,42 @@ const options = mkOptions(OPTIONS, {
             directories: {
                 left: {
                     directory1: {
+                        label: opt("󱧶 Documents"),
+                        command: opt("bash -c \"dolphin $HOME/Documents/\"")
+                    },
+                    directory2: {
                         label: opt("󰉍 Downloads"),
                         command: opt("bash -c \"dolphin $HOME/Downloads/\"")
                     },
-                    directory2: {
-                        label: opt("󰉏 Videos"),
-                        command: opt("bash -c \"dolphin $HOME/Videos/\"")
-                    },
                     directory3: {
-                        label: opt("󰚝 Projects"),
-                        command: opt("bash -c \"dolphin $HOME/Projects/\"")
+                        label: opt("󰚝 Development"),
+                        command: opt("bash -c \"dolphin $HOME/Development/\"")
                     },
                 },
                 right: {
                     directory1: {
-                        label: opt("󱧶 Documents"),
-                        command: opt("bash -c \"dolphin $HOME/Documents/\"")
+                        label: opt("󱍙 Music"),
+                        command: opt("bash -c \"dolphin $HOME/Music/\"")
                     },
                     directory2: {
                         label: opt("󰉏 Pictures"),
                         command: opt("bash -c \"dolphin $HOME/Pictures/\"")
                     },
                     directory3: {
-                        label: opt("󱂵 Home"),
-                        command: opt("bash -c \"dolphin $HOME/\"")
+                        label: opt("󰕧 Videos"),
+                        command: opt("bash -c \"dolphin $HOME/Videos/\"")
                     },
                 }
             },
         },
         clock: {
             time: {
-                military: opt(false),
+                military: opt(true),
             },
             weather: {
                 interval: opt(60000),
                 unit: opt<"metric" | "imperial">("imperial"),
-                location: opt("Los Angeles"),
+                location: opt("San Jose, California"),
                 key: opt<string>(
                     JSON.parse(Utils.readFile(`${App.configDir}/.weather.json`) || "{}")?.weather_api_key || "",
                 ),
