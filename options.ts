@@ -652,7 +652,7 @@ const options = mkOptions(OPTIONS, {
                 logout: opt("pkill Hyprland"),
                 shutdown: opt("shutdown now"),
                 avatar: {
-                    image: opt("$HOME/.config/ags/assets/AndyEyeball.png"),
+                    image: opt("avatar-default-symbolic"),
                     name: opt<"system" | string>("system"),
                 },
             },
