@@ -3,8 +3,6 @@ const audio = await Service.import("audio");
 import { openMenu } from "../utils.js";
 import options from "options";
 
-import { globalMousePos } from "globals.js";
-
 const Volume = () => {
     const icons = {
         101: "󰕾",
@@ -28,21 +26,30 @@ const Volume = () => {
     };
 
     const volIcn = Widget.Label({
-        vpack: "center",
+        hexpand: true,
         label: getIcon(),
-        class_name: "bar-button-icon volume",
+        class_name: "bar-button-icon volume txt-icon bar",
     });
 
     const volPct = Widget.Label({
-        vpack: "center",
+        hexpand: true,
         label: audio.speaker.bind("volume").as((v) => `${Math.round(v * 100)}%`),
         class_name: "bar-button-label volume",
     });
 
     return {
         component: Widget.Box({
-            vpack: "center",
-            class_name: "volume",
+            hexpand: true,
+            vexpand: true,
+            className: Utils.merge([options.theme.bar.buttons.style.bind("value"), options.bar.volume.label.bind("value")], (style, showLabel) => {
+                const styleMap = {
+                    default: "style1",
+                    split: "style2",
+                    wave: "style3",
+                };
+
+                return `volume ${styleMap[style]} ${!showLabel ? "no-label" : ""}`;
+            }),
             children: options.bar.volume.label.bind("value").as((showLabel) => {
                 if (showLabel) {
                     return [volIcn, volPct];
