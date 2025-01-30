@@ -1197,9 +1197,9 @@ const options = mkOptions(OPTIONS, {
                 enabled: opt(true),
                 left: {
                     shortcut1: {
-                        icon: opt('󰇩'),
-                        tooltip: opt('Firefox'),
-                        command: opt('firefox'),
+                        icon: opt(''),
+                        tooltip: opt('Chrome'),
+                        command: opt('flatpak run com.google.Chrome'),
                     },
                     shortcut2: {
                         icon: opt('󰎆'),
@@ -1208,8 +1208,8 @@ const options = mkOptions(OPTIONS, {
                     },
                     shortcut3: {
                         icon: opt('󰌾'),
-                        tooltip: opt('1Password'),
-                        command: opt('1password'),
+                        tooltip: opt('Bitwarden'),
+                        command: opt('flatpak run com.bitwarden.desktop'),
                     },
                     shortcut4: {
                         icon: opt(''),
